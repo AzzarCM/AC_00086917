@@ -1,4 +1,4 @@
-;ejercicio de las notas	
+;ejercicio 1 de las notas	
 	
 	org 100h
 
@@ -44,10 +44,9 @@ lupita:
 	mov	dl, "A"
 	mov	[20Bh], dl
 
-	int 20h
 
 
-;ejercicio de nayib y las graficas
+;ejercicio 2 de nayib y las graficas
 
         mov si, 0d
         mov ax, 2d
@@ -68,4 +67,23 @@ parte2:
         cmp si, 14d 
         jb parte2
 
-        int 20h
+        
+;ejercicio 3 fibonacci
+
+mov	al, 00h ; al tiene el primer numero de la secuencia
+	mov	si, 220h  ;lugar de memoria para la salida
+	mov 	[si], al ;movemos 0 a la primera posicion
+	add	si, 1 
+	add	al, 1 ;al tiene el segundo elemento de la secuencia
+	mov	[si], al 
+	mov	cx, 16d ;cantidad de veces en el loop
+	sub	cx, 2d
+
+	l1:
+		mov	al, [si-1] ;movemos (i-1) a la posicion de al
+		add	al, [si]
+		add 	si, 1
+		mov	[si], al ;guardamos la suma en la nueva posicion
+		loop 	l1 ;repetimos
+
+		int 20h
