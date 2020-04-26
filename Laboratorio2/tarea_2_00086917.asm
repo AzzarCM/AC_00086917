@@ -46,3 +46,26 @@ lupita:
 
 	int 20h
 
+
+;ejercicio de nayib y las graficas
+
+        mov si, 0d
+        mov ax, 2d
+        mov cx, 2d
+        
+parte1:  
+        mul cx
+        mov [si+210h], ax
+        inc si ; incrementamos en 1
+        cmp ax, 256d ;comparamos para ver si se pasa de 255
+        jb parte1 ;si aun es menor seguimos en parte 1
+
+parte2:  
+        mul cx
+        inc si
+        mov [si+210h], ax
+        inc si
+        cmp si, 14d 
+        jb parte2
+
+        int 20h
