@@ -86,9 +86,9 @@ lupi3:	mov 	cl, [msg3+di-20d]
 
 
 section .data
-msg	db 	"Mami que tu quiere? "
+msg	db 	"but in the end"
 len 	equ	$-msg+4d
-msg2 db "prueba uno"
+msg2 db "It doesnt even"
 len2	equ $-msg2+30d
-msg3 db "prueba dos"
+msg3 db "Matteeeer"
 len3	equ $-msg3+20d
